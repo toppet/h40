@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="22px" viewBox="0 0 13 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="desktop_lakasok" transform="translate(-406.000000, -1824.000000)" fill="#50E3C2" fill-rule="nonzero">
+            <g id="Group-20" transform="translate(406.000000, 1817.000000)">
+                <g id="opened-door-aperture" transform="translate(0.000000, 7.280000)">
+                    <path d="M3.61687168,0 L3.61687168,0.917311671 L0,0.917311671 L0,19.2195378 L1.33715502,19.2195378 L1.33715502,2.24357035 L3.61687168,2.24357035 L3.61687168,20.7999999 L12.4799999,19.2195378 L12.4799999,16.6333693 L12.4799999,1.58375634 L3.61687168,0 Z M4.77176468,11.475862 C4.56905667,11.475862 4.40470586,11.1547338 4.40470586,10.7585989 C4.40470586,10.3625074 4.56905667,10.0413793 4.77176468,10.0413793 C4.9744727,10.0413793 5.13882351,10.3625074 5.13882351,10.7585989 C5.13882351,11.1547338 4.9744727,11.475862 4.77176468,11.475862 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

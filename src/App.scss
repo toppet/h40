@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Rasa');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import 'reset.css';
+
+* {
+  box-sizing: border-box;
+}
+
+.h40 {
+  font-family: 'Roboto', sans-serif;
+  
+  button {
+    cursor: pointer;
+    outline: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .header-bar-content,
+  .navbar-content,
+  .page-content,
+  .footer-row {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+
+  .NotFoundPage,
+  .AboutPage,
+  .ApartmentsPage,
+  .ReferencesPage {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 100vh;
+
+    .page-content {
+      padding: 10%;
+      padding-bottom: 60px;
+      padding-top: 219px;
+      width: 100%;
+      max-width: 1920px;
+      margin: 0 auto;
+    }
+
+  }
+}
+
+

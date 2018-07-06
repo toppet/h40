@@ -1,0 +1,249 @@
+@import '../../variables';
+
+.header-wrapper {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+
+  // === === === === === === //
+  // === HEADER BAR === //
+  // === === === === === === //
+
+  .header-bar {
+    background-color: $secondary-blue;
+    width: 100%;
+
+    .header-bar-content {
+      color: white;
+      padding: 15px;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .lang-select {
+      border-right: 1px solid white;
+      display: flex;
+      align-items: center;
+
+      a {
+        display: flex;
+        align-items: center;
+        color: white;
+        margin-right: 10px;
+        text-transform: uppercase;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        img {
+          height: 16px;
+          margin-right: 10px;
+          max-width: 20px;
+        }
+      }
+    }
+
+    .contact-info {
+      margin-right: 150px;
+      padding-left: 25px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+
+      span {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+      }
+      span img {
+        width: 19px;
+        height: 19px;
+        margin-right: 8px;
+      }
+    }
+  }
+  
+  // === === === === === === //
+  // === MAIN MENU === //
+  // === === === === === === //
+  
+  .nav-bar {
+
+    &.dark {
+      background: #304A6F;
+    }
+
+    &.light {
+      background: white;
+      border: 1px solid #E3E3E3;
+    }
+
+    &.mobile {
+      display: block;
+    }
+    &.desktop {
+      display: none;
+    }
+    @media #{$desktop-md} {
+      &.mobile {
+        display: none;
+      }
+      &.desktop {
+        display: block;
+      }
+    }
+
+    .navbar-content {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      padding: 30px 115px;
+      padding-bottom: 20px; 
+    }
+    
+    .h40-logo {
+      font-size: 60px;
+      font-family: 'Rasa', serif;
+      color: white;
+      margin-right: 60px;
+    }
+
+    &.light .h40-logo {
+      color: $primary-green;
+      span {
+        color: $primary-blue;
+      }
+    }
+
+    .nav-links {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .nav-links a {
+      padding-bottom: 10px;
+    }
+
+    .nav-links a,
+    .nav-links .dropdown span {
+      margin-right: 45px;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 12px;
+      
+      @media #{$desktop-md} {
+        font-size: 15px;
+      }
+    }
+
+    &.light .nav-links a,
+    &.light .nav-links .dropdown span {
+      color: rgba(40,56,69,0.7);
+    }
+    
+    .nav-links a.selected {
+      color: white;
+      font-weight: bold;
+    }
+    
+    &.light .nav-links a.selected {
+      color: #283845;
+    }
+
+    .nav-links span {
+      position: relative;
+    }
+    
+    // === === === === === === //
+    // === MAIN MENU --> DROPDOWN === //
+    // === === === === === === //
+    
+    .nav-links .dropdown {
+      padding-bottom: 10px;
+      cursor: pointer;
+      position: relative;
+      
+      &:hover > .dropdown-menu {
+        display: block;
+      }
+
+      &:hover + .dropdown-menu {
+        display: block;
+      }
+
+      span svg {
+        right: -25px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .dropdown-menu {
+        display: none;
+        margin-top: 10px;
+        overflow: hidden;
+        background: white;
+        position: absolute;
+        width: 255px;
+        border-radius: 6px;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,0.05);
+
+        a {
+          color: $primary-gray;
+          display: block;
+          padding: 20px 0 20px 30px;
+          margin: 0;
+          font-size: 16px;
+          position: relative;
+          text-transform: none;
+
+          &:hover {
+            background: #FAFAFA;
+            font-weight: bold;
+            color: $primary-blue;
+          }
+        }
+        a svg {
+          position: absolute;
+          // width: 8px;
+          // height: 8px;
+          // background: red;
+          right: 15px;
+          top: 50%;
+          transform: translateY(-50%) rotate(-90deg);
+        }
+      }
+    }
+    
+    // === === === === === === //
+    // === CONDITIONAL BUTTON === //
+    // === === === === === === //
+
+    .nav-links a.sell-btn { 
+      margin-right: 0;
+      
+      button {
+        cursor: pointer;
+        margin:0;
+        padding: 18px 35px;
+        border: none;
+        background: white;
+        border-radius: 6px;
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+
+    &.light .nav-links a.sell-btn  button {
+      background: $primary-blue;
+      color: white;
+    }
+  }
+}
