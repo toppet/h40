@@ -42,7 +42,7 @@
   // === === === === === // 
 
   .apartment-tabs-wrap {
-    padding: 0 8%;
+    padding: 0 2%;
     margin: 85px 0;
 
     .apartment-tabs {
@@ -50,24 +50,35 @@
       flex-direction: row;
       flex-wrap: wrap;
       align-items: stretch;
-      justify-content: space-evenly;
-      border: 1px solid rgba(26,57,102,0.1);
-      border-radius: 6px;
+      justify-content: center;
     }
+    
     .apartment-tabs .tab {
+      
       cursor: pointer;
       padding: 15px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       border-right: 1px solid rgba(26,57,102,0.1);
+      border-top: 1px solid rgba(26,57,102,0.1);
+      border-bottom: 1px solid rgba(26,57,102,0.1);
       min-width: 195px;
+
+      &:first-child {
+        border-left: 1px solid rgba(26,57,102,0.1);
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+      }
       
       &:last-child {
-        border-right: none;
+        border-right: 1px solid rgba(26,57,102,0.1);
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
       }
 
+      
       &.free,
       &.inprogress,
       &.sold {
@@ -145,10 +156,6 @@
       margin-top: 25px;
     }
     
-    .tab-content .col-left,
-    .tab-content .col-right {
-      
-    }
     .tab-content .col-left {
       width: 45%
     }

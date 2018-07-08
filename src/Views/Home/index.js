@@ -31,8 +31,19 @@ export default class Home extends Component {
     const mainSliderSettings = {
       dots: true,
       arrows: true,
-      autoplay: true,
-      autoplaySpeed: 4000,
+      // autoplay: true,
+      // autoplaySpeed: 4000,
+      responsive: [
+        {
+          breakpoint: 480,
+          settings: {
+            arrows: false,
+          }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ],
     };
     
     const innerSliderSettings = {
@@ -66,7 +77,7 @@ export default class Home extends Component {
             <div className="slide-3">
               <div className="slide-text-wrap">
                 <h3>Nyugalom és kényelem találkozása Budán</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium commodi, deserunt odio cum debitis, quis voluptate voluptatu minima amet explicabo aliquid, deleniti nisi veritatis soluta a consequatur quisquam voluptas dicta eius eveniet iste. Cumque.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing minima amet explicabo aliquid, deleniti nisi veritatis soluta a consequatur quisquam voluptas dicta eius eveniet iste. Cumque.</p>
               </div>
             </div>
           </Slider>
@@ -75,7 +86,7 @@ export default class Home extends Component {
           {/*  === BUILDINGS === */}
           {/*  === === === === === === */}
           
-          <section className="buildings" id="epuletek">
+         <section className="buildings" id="epuletek">
             <div className="section-header">
               <h3 className="section-title">Épületek</h3>
               <div className="section-header-text">
@@ -83,7 +94,7 @@ export default class Home extends Component {
                 <p>A nagyobbik épületben  három lakás –két iroda , a kisebb épületben két lakás elosztásban.</p>
               </div>
             </div>
-            <Slider {...innerSliderSettings} className="inner-slider">
+            {/* <Slider {...innerSliderSettings} className="inner-slider">
               <div className="slide-1">
                 <img src={render_1} alt="render-1"/>
               </div>
@@ -93,7 +104,7 @@ export default class Home extends Component {
               <div className="slide-3">
                 <img src={render_3} alt="render-3"/>
               </div>
-            </Slider>
+            </Slider>*/}
           </section>
           
           {/*  === === === === === === */}
@@ -101,7 +112,7 @@ export default class Home extends Component {
           {/*  === === === === === === */}
           
           
-          <section className="attributes" id="jellemzok">
+           <section className="attributes" id="jellemzok">
 
             <h3 className="section-title">Jellemzők</h3>
             <p>Klimatizálás<img src={legkondi} alt="klima" />felsőfokon</p>
@@ -153,7 +164,7 @@ export default class Home extends Component {
               </div>
             </div>
 
-            <div className="a-b">
+           <div className="a-b">
               <div className="building-a">
                 <span className="building-initial">A</span>
                 <p>A garázsszinten 7 db gépkocsibeállóhelyet, nagyméretű tárolókat találunk, a földszinten egy lakást és mellette egy kisebb irodát mindkettőt kizárólagos kert használattal, az első emeleten szintén egy lakást és egy kisebb irodát,míg a legfelső szinten egy, a teljes szintet elfoglaló penthouse lakást hatalmas terasszal. Itt liften mehetünk fel az emeletre.</p>
@@ -189,9 +200,9 @@ export default class Home extends Component {
               </div>
               <div className="section-header-col">
                 <h3 className="section-title">Értékes fészek, kiváló befektetés</h3>
-                <div className="section-header-text">
-                  <p>A környék rendkívül népszerű a lakást/házat vásárlók körében, mert egyrészt magas presztízsű és árfekvésű környék, amely egyrészt értékmegőrző otthonként, másrészt kiváló bérbeadhatósággal rendelkező ingatlanként is szolgál a magyar és nemzetközi vásárlók körében egyaránt.</p>
-                </div>
+                <p className="section-header-text">
+                  A környék rendkívül népszerű a lakást/házat vásárlók körében, mert egyrészt magas presztízsű és árfekvésű környék, amely egyrészt értékmegőrző otthonként, másrészt kiváló bérbeadhatósággal rendelkező ingatlanként is szolgál a magyar és nemzetközi vásárlók körében egyaránt.
+                </p>
               </div>
               <div className="section-header-col">
                 <button type="button">

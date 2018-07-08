@@ -9,6 +9,11 @@ import { ExpandMore } from '@material-ui/icons/';
 import './Navigation.scss';
 
 export default class Navigation extends Component {
+  state = {
+    isOpen: false,
+    isDropDownOpen: false,
+  }
+  
   render() {
     let sellBtn = null;
 
@@ -26,8 +31,8 @@ export default class Navigation extends Component {
         <div className={`header-bar`}>
           <div className="header-bar-content">
             <div className="lang-select">
-              <a href="#" className="hu"><img src={hu} alt="hu" />Magyar</a>
-              <a href="#" className="en"><img src={en} alt="en" />English</a>
+              <a href="#" className="hu"><img src={hu} alt="hu" /><span className="lang-text">Magyar</span></a>
+              <a href="#" className="en"><img src={en} alt="en" /><span className="lang-text">English</span></a>
             </div>
             <div className="contact-info">
               <span className="phone"><img src={telefon} alt="telefon" />+36 30 1234567</span>
@@ -57,9 +62,37 @@ export default class Navigation extends Component {
             </div>
           </div>
         </div>
+        
         {/* MOBILE MENU */}
-        <div className="nav-bar mobile">
-          mobilmenu
+       
+        <div className={`nav-bar mobile ${theme} ${this.state.isOpen ? 'open' : ''}`}>
+          <div className="nav-bar-header">
+            <div className="h40-logo"><span>H</span>40</div>
+            <div className="menu-btn" onClick={() => this.setState({ isOpen: !this.state.isOpen })}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div className="nav-links">
+            <div className="navbar-content">
+              <NavLink exact to="/" activeClassName="selected">Főoldal</NavLink>
+              <div className={`dropdown ${this.state.isDropDownOpen ? 'open' : ''}`}>
+                <span onClick={() => this.setState({ isDropDownOpen: !this.state.isDropDownOpen })}>Ismertető <ExpandMore /></span>
+                <div className="dropdown-menu">
+                  <HashLink to='/#epuletek' replace  onClick={() => this.setState({ isOpen: false })}>Épületek <ExpandMore /></HashLink>
+                  <HashLink to='/#jellemzok' replace  onClick={() => this.setState({ isOpen: false })}>Jellemzők <ExpandMore /></HashLink>
+                  <HashLink to='/#muszaki-tartalom'  onClick={() => this.setState({ isOpen: false })}>Műszaki tartalom <ExpandMore /></HashLink>
+                  <HashLink to='/#muszaki-alaprajz'  onClick={() => this.setState({ isOpen: false })}>Műszaki alaprajzok <ExpandMore /></HashLink>
+                </div>
+              </div>
+              <NavLink exact to="/helyszin" activeClassName="selected">Helyszín &amp; környék</NavLink>
+              <NavLink exact to="/referenciak" activeClassName="selected">Referencia</NavLink>
+              <NavLink exact to="/lakasok" activeClassName="selected">Lakások</NavLink>
+              <NavLink exact to="/kapcsolat" activeClassName="selected">Kapcsolat</NavLink>
+              {sellBtn}
+            </div>
+          </div>
         </div> 
       </div>
     )

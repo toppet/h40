@@ -5,6 +5,7 @@
   width: 100%;
   position: relative;
   background-color: $secondary-blue;
+  word-break: break-word;
 
   &:after {
     content: "";
@@ -78,15 +79,15 @@
       }
 
       input {
-        padding: 23px 25px;
+        padding: 20px 25px;
         border: 1px solid white;
         border-radius: 6px;
         margin-bottom: 15px;
         width: 100%;
-        max-width: 650px;
+        max-width: 265px;
         background: $tertiary-gray;
         color: white;
-        font-size: 20px;
+        font-size: 18px;
         outline: none;
 
         @media #{$desktop-md}{
@@ -97,11 +98,11 @@
 
       input::placeholder {
         color: white;
-        font-size: 20px;
+        font-size: 18px;
       }
 
       button[type="submit"] {
-        padding: 22px 35px;
+        padding: 20px 35px;
         background-color: #FFFFFF;	
         align-items: center;
         color: $primary-blue;
@@ -114,7 +115,7 @@
         outline: none;
 
         @media #{$desktop-md}{
-          padding: 25px 43px;
+          padding: 20px 43px;
           font-size:  17px;
         }
       }

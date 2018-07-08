@@ -5,10 +5,12 @@
 
 * {
   box-sizing: border-box;
+  // word-break: break-all;
 }
 
 .h40 {
   font-family: 'Roboto', sans-serif;
+  // width: 100vw;
   
   button {
     cursor: pointer;
@@ -42,8 +44,8 @@
       padding: 10%;
       padding-bottom: 60px;
       padding-top: 219px;
-      width: 100%;
-      max-width: 1920px;
+      //width: 100%;
+      // max-width: 1920px;
       margin: 0 auto;
     }
 

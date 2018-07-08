@@ -1,15 +1,18 @@
 @import '../../variables';
 
 .HomePage  {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
+ // display: flex;
+  //flex-direction: column;
+  //align-items: flex-start;
+  // content: space-between;
   
   .page-content {
     background: white;
-    width: 100%;
-    padding-bottom: 50px;
+    padding-bottom: 0;
+    
+    @media #{$desktop-md} {
+      padding-bottom: 50px;
+    }
   }
   
   //  --- --- --- --- --- //
@@ -17,13 +20,14 @@
   //  --- --- --- --- --- //
 
   .page-content .main-slider.slick-slider {
-    width: 850px;
-    height: 735px;
+    //width: 100%;
+    height: 535px;
     margin-bottom: 100px;
     overflow: hidden;
 
     @media #{$desktop-md} {
-      max-width: 100vw;  
+      //max-width: 100vw;
+      height: 735px; 
     }
 
     .slick-prev,
@@ -80,24 +84,42 @@
     }
 
     .slide-text-wrap {
-      padding: 35px;
-      margin-left: 200px;
-      width: 745px;
+      width: 75%;
       color: white;
       background-color: rgba(55,55,55,.6);
       text-align: left;
       border-radius: 6px;
-      position: absolute;
-      top: 50%;
+      margin: 0 auto;
+      margin-top: 225px;
+      padding: 15px;
+      
+
+      @media #{$desktop-md} {
+        padding: 35px;
+        margin-left: 200px;
+        width: 745px;
+        position: absolute;
+        top: 18%;
+      }
 
       h3 {
         padding: 0;
         margin: 0;
         font-family: 'Rasa', serif;
-        font-size: 59px;
+        font-size: 30px;
+        margin-bottom: 15px;
+
+        @media #{$desktop-md} {
+          font-size: 59px;
+        }
       }
+
       p {
-        font-size: 22px;
+        font-size: 18px;
+
+        @media #{$desktop-md} {
+          font-size: 22px;
+        }
       }
     }
   }
@@ -153,23 +175,36 @@
   //  --- --- --- --- --- //
 
   section {
-    margin-bottom: 150px;
-    
+    margin-bottom: 65px;
+
+    @media #{$desktop-md} {
+      margin-bottom: 150px;
+    }
+
     .section-title {
-      font-size: 65px;
+      font-size: 40px;
       font-family: 'Rasa', serif;
       font-weight: bold;
-      
+
+      @media #{$desktop-md} {
+        font-size: 65px;
+      }
+
       color: $primary-blue;
 
       &:after {
         content: "";
         display: block;
-        max-width: 270px;
+        max-width: 100%;
         width: 100%;
         height: 1px;
         margin-top: 10px;
         background: #50E3C2;
+
+        @media #{$desktop-md} {
+          font-size: 65px;
+          max-width: 270px;
+        }
       }
     }
 
@@ -185,9 +220,19 @@
   .buildings {
     .section-header {
       display: flex;
-    
+      flex-direction: column;
+
+      @media #{$desktop-md} {
+        flex-direction: row;
+      }
+
       .section-title {
-        margin-right: 10%;
+        margin-bottom: 35px;
+
+        @media #{$desktop-md} {
+          margin: 0;
+          margin-right: 10%;
+        }
       } 
       .section-header-text {
         display: flex;
@@ -196,8 +241,12 @@
       .section-header-text p {
         flex: 1;
         line-height: 33px;
-        font-size: 18px;
+        font-size: 16px;
         margin-bottom: 25px;
+
+        @media #{$desktop-md} {
+          font-size: 18px;
+        }
       }
     }
   }
@@ -221,33 +270,51 @@
     }
 
     > p {
-      font-size: 23px;
+      font-size: 16px;
       font-weight: bold;
       display: flex;
       align-items: center;
       color: $secondary-blue;
-      margin-bottom: 65px;
+      margin-bottom: 30px;
+
+      @media #{$desktop-md} {
+        margin-bottom: 65px;
+        font-size: 23px;
+      }
     }
     img {
-      margin: 0 30px;
+      width: 55px;
+      margin: 0 15px;
+
+      @media #{$desktop-md} {
+        width: auto;
+        margin: 0 30px;
+      }
     }
   }
 
   .attributes .attribute-cards {
     width: 100%;
-    height: 400px;
+    height: auto;
     margin-bottom: 25px;
     display: flex;
     padding: 0 calc(6% - 15px);
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
+
+    @media #{$desktop-md} {
+      flex-direction: row;
+      height: 400px;
+    }
 
     .attribute-card {
       box-sizing: border-box;	
       min-height: 290px;
       margin: 0 10px;
-      flex: 1;
+      margin-bottom: 20px;
+      
       max-width: 325px;
       border: 1px solid rgba(80,227,194,0.3);
       border-radius: 6px;
@@ -259,6 +326,11 @@
       text-align: left;
       position: relative;
       overflow: hidden;
+
+      @media #{$desktop-md} {
+        margin: 0 10px;
+        flex: 1;
+      }
       
       &:hover {
         border: 1px solid #50E3C2;
@@ -340,11 +412,39 @@
 
   .attributes .a-b {
     display: flex;
-    flex-direction: row;
-    padding: 0 95px;
-    background: url('../../images/render_total_vagott.png') no-repeat bottom center;
-    padding-bottom: 750px;
+    flex-direction: column;
+    padding: 0 6%;
     margin-bottom: 30px;
+
+    @media #{$desktop-md} {
+      padding: 0 95px;
+      background: url('../../images/render_total_vagott.png') no-repeat bottom center;
+      padding-bottom: 750px;
+    }
+
+    .building-a {
+      order: 2;
+      margin-bottom: 80px;
+
+      @media #{$desktop-md} {
+        order: 1;
+        margin-bottom: 0;
+      }
+    }
+    .building-a-b-middle {
+      order: 1;
+
+      @media #{$desktop-md} {
+        order: 2;
+      }
+    }
+    .building-b {
+      order: 3;
+    }
+
+    @media #{$desktop-md} {
+      flex-direction: row;
+    }
 
     .building-a,
     .building-b {
@@ -356,54 +456,71 @@
         line-height: 33px;
       }
     }
+
     .building-a-b-middle {
       flex: 1;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-direction: column;
+      font-family: 'Rasa', serif;
 
       h3 {
-        font-size: 55px;
-        line-height: 76px;
+        font-size: 45px;
+        font-weight: bold;
+        line-height: 53px;
+        color: $primary-blue;
+        margin-bottom: 85px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #50E3C2;
+        
+        @media #{$desktop-md} {
+          font-size: 55px;
+          line-height: 76px;
+          margin-bottom: 0;
+        }
       }
 
       button {
-        padding: 10px 20px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        box-sizing: border-box;	
-        border: 1px solid rgba(26,57,102,0.1);	
-        border-radius: 6px;	
-        background-color: #FFFFFF;	
-        box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
-        color: $primary-blue;
-        font-size:  17px;
-        outline: none;
-        .btn-text {
-          text-transform: uppercase;
-          font-weight: bold;
-          margin-right: 45px;
-        }
-        .btn-arrow {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          border: 1px solid $secondary-blue;
-          background: #eee;
-          padding: 10px;
+        display: none;
+
+        @media #{$desktop-md} { 
+          padding: 10px 20px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+          box-sizing: border-box;	
+          border: 1px solid rgba(26,57,102,0.1);	
+          border-radius: 6px;	
+          background-color: #FFFFFF;	
+          box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
+          color: $primary-blue;
+          font-size:  17px;
+          outline: none;
+          .btn-text {
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-right: 45px;
+          }
+          .btn-arrow {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid $secondary-blue;
+            background: #eee;
+            padding: 10px;
+          }
         }
       }
     }
 
     .building-initial {
-      font-size: 57px;
+      font-size: 35px;
       font-family: 'Rasa', serif;
       color: $primary-blue;
-      width: 90px;
-      height: 90px;
+      width: 55px;
+      height: 55px;
       background-color: rgba(80,227,194,0.3);
       border: 2px solid #50E3C2;
       border-radius: 50%;
@@ -412,17 +529,29 @@
       justify-content: center;
       margin: 0 auto;
       position: relative;
-      margin-bottom: 75px;
+      margin-bottom: 50px;
+
+      @media #{$desktop-md} {
+        font-size: 57px;
+        width: 90px;
+        height: 90px;
+        margin-bottom: 75px;
+      }
 
       &:before {
         content: "";
-        width: 152px;
-        height: 152px;
+        width: 90px;
+        height: 90px;
         display: block;
         position: absolute;
         background-color: rgba(80,227,194,0.1);
         border: 2px solid #50E3C2;
         border-radius: 50%;
+
+        @media #{$desktop-md} {
+          width: 150px;
+          height: 150px;
+        }
       }
     }
 
@@ -430,27 +559,52 @@
   
   .attributes .documents-wrap {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    width: 100%;
+
+    @media #{$desktop-md} {
+      width: auto;
+      flex-direction: row;
+    }
 
     p {
       display: flex;
       align-items: center;
-      font-size: 21px;
+      justify-content: space-between;
+      font-size: 13px;
       color: $primary-blue;
       margin: 0 45px;
+      margin-bottom: 35px;
       font-weight: bold;
+      width: 100%;
+      padding: 0 45px;
+      
+
+      @media #{$desktop-md} {
+        font-size: 21px;
+        padding: 0;
+      }
     }
 
     p img {
-      width: 73px;
+      width: 45px;
       padding: 0;
+
+      @media #{$desktop-md} {
+        width: 70px;
+      }
     }
     p .btn-download {
       padding: 10px;
       border: 1px solid rgba(26,57,102,0.1);
       border-radius: 6px;
       background: #fff;
-      margin-left: 30px;
+      margin-left: 20px;
+
+      @media #{$desktop-md} {
+        margin-left: 30px;
+      }
       
       &:hover{        
         box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
@@ -468,19 +622,32 @@
   //  --- --- --- --- --- //
 
   .investment {
-    background: url('../../images/baloldal.png') no-repeat bottom left;
-    padding-bottom: 150px;
+    
     margin-bottom: 0;
+
+
+    @media #{$desktop-md} {
+      background: url('../../images/baloldal.png') no-repeat bottom left;
+      padding-bottom: 150px;
+    }
   
     .section-header {
       display: flex;
-      flex-direction: row; 
+      flex-direction: column; 
       align-items: center;
       justify-content: center;
       margin-bottom: 100px;
 
+      @media #{$desktop-md} {
+        flex-direction: row;
+      }
+
       .section-header-col:first-child {
-        margin-bottom: auto;
+        margin-bottom: 35px;
+
+        @media #{$desktop-md} {
+          margin-bottom: auto;
+        }
       }
 
       .section-header-icon {
@@ -511,7 +678,7 @@
         }
       }
 
-        .section-title,
+      .section-title,
       .section-header-text {
         display: block;
         max-width: 950px;
@@ -519,12 +686,22 @@
       
       .section-title {
         margin-bottom: 30px;
+        text-align: center;
+
+        @media #{$desktop-md} {
+          text-align: left;
+        }
       }
 
       .section-header-text {
         color: $secondary-blue;
-        font-size: 21px;
+        font-size: 16px;
         line-height: 33px;
+        margin-bottom: 30px;
+
+        @media #{$desktop-md} {
+          font-size: 21px;
+        }
       }
 
       button {
@@ -558,46 +735,68 @@
     }
 
     .investor-cards {
-      padding: 45px 3%;
-      // border: 2px solid red;
-      width: 70%;
-      margin-left: auto;
       display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      position: relative;
-      overflow: hidden;
+      flex-direction: column;
+      justify-content: center;
+      padding: 30px 6%;
+      background: linear-gradient(42.88deg, rgba(80,227,194,0.1) 0%, #FFFFFF 100%);
+
+      @media #{$desktop-md} {
+        padding: 45px 3%;
+        // border: 2px solid red;
+        width: 70%;
+        margin-left: auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        overflow: hidden;
+      }
 
       &:before {
-        content: "";
-        display: block;
-        height: 90%;
-        background: $primary-green;
-        border-radius: 32px;
-        height: 550px;
-        width: 1000px;
-        right: -150px;
-        position: absolute;
-        opacity: .5;
+        display: none;
+        @media #{$desktop-md} {
+          content: "";
+          display: block;
+          height: 90%;
+          background: $primary-green;
+          border-radius: 32px;
+          height: 550px;
+          width: 1000px;
+          right: -150px;
+          position: absolute;
+          opacity: .5;
+        }
       }
 
       .investor-card {
-        max-width: 475px;
+        width: 100%;
         border: 1px solid #E8E8E8;
         border-radius: 6px;
         background-color: #FFFFFF;
         box-shadow: 0 2px 15px 0 rgba(0,0,0,0.1);
         padding: 20px;
-        margin-right: 55px;
+        margin-bottom: 30px;
+
+        @media #{$desktop-md} {
+          margin-right: 55px;
+          margin-bottom: 0;
+          max-width: 475px;
+        }
         
         z-index: 1;
 
         .image-wrap {
-          border-radius: 6px;
-          margin-bottom: 35px;
-          position: relative;
-          height: 300px;
-          overflow: hidden;
+          display: none;
+
+          @media #{$desktop-md} {
+            display: block;
+            border-radius: 6px;
+            margin-bottom: 35px;
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+          }
         }
 
         .image-wrap img {
@@ -615,13 +814,20 @@
 
         h3.card-title {
           color: $primary-blue;
-          font-size: 35px;
+          font-size: 25px;
+          margin-top: 15px;
           margin-bottom: 15px;
+          @media #{$desktop-md} {
+            font-size: 35px;
+          }
         }
         p.card-text{
           color: $secondary-blue;
-          font-size: 15px;
+          font-size: 13px;
           line-height: 24px;
+          @media #{$desktop-md} {
+            font-size: 15px;
+          }
         }
       }
     }
