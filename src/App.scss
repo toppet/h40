@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Rasa');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import 'reset.css';
-
+@import './variables';
 * {
   box-sizing: border-box;
   // word-break: break-all;
@@ -30,7 +30,6 @@
   }
 
   .NotFoundPage,
-  .AboutPage,
   .ApartmentsPage,
   .ReferencesPage {
     display: flex;
@@ -41,12 +40,17 @@
     min-height: 100vh;
 
     .page-content {
-      padding: 10%;
+      padding: 6%;
       padding-bottom: 60px;
       padding-top: 219px;
-      //width: 100%;
+      width: 100%;
       // max-width: 1920px;
       margin: 0 auto;
+
+      @media #{$desktop-md}{
+        padding: 10%;
+      }
+      
     }
 
   }

@@ -24,7 +24,7 @@ export default class About extends Component {
 
     if(this.state.activeTab === 0) {
       tabContent = (
-        <div className="tab-1">
+        <div className="tab-content-wrapper">
           <div className="col-50 col-left">
             <div className="logo">
               <h3>H<span>40</span></h3>
@@ -58,7 +58,7 @@ export default class About extends Component {
 
     if(this.state.activeTab === 1) {
       tabContent = (
-        <div className="tab-1">
+        <div className="tab-content-wrapper">
           <div className="col-50 col-left">
             <div className="logo">
               <h3>H<span>40</span></h3>
@@ -94,7 +94,7 @@ export default class About extends Component {
         <Navigation theme="light"/>
         
         <div className="page-content">
-          <div className="content-row">
+          <div className="content-row top">
             <div className="col-50 fact-list-wrapper">
               <h3>Miért minket</h3>
               <ul className="fact-list">
@@ -161,24 +161,24 @@ export default class About extends Component {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="content-row">
-            <div className="col-100">
-              <div className="tabs-wrapper">
-                <div className="tab-headers">
-                  <span className={`tab ${this.state.activeTab === 0 ? 'active' : '' }`} onClick={() => this.handleTabChange(0)}>LAKÁSOK PONTOS CÍME</span>
-                  <span className={`tab ${this.state.activeTab === 1 ? 'active' : '' }`} onClick={() => this.handleTabChange(1)}>ÉRTÉKESÍTÉSI IRODA</span>
-                </div>
-                <div className="tab-content">
-                  {tabContent}
-                </div>
+        </div>
+        <div className="content-row bottom">
+          <div className="col-100">
+            <div className="tabs-wrapper">
+              <div className="tab-headers">
+                <span className={`tab ${this.state.activeTab === 0 ? 'active' : '' }`} onClick={() => this.handleTabChange(0)}>LAKÁSOK PONTOS CÍME</span>
+                <span className={`tab ${this.state.activeTab === 1 ? 'active' : '' }`} onClick={() => this.handleTabChange(1)}>ÉRTÉKESÍTÉSI IRODA</span>
+              </div>
+              <div className="tab-content">
+                {tabContent}
               </div>
             </div>
           </div>
         </div>
-        
-        <Footer />
       </div>
+        
+      <Footer />
+    </div>
     )
   }
 }
