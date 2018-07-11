@@ -14,7 +14,11 @@
 
   .col-50 {
     display: block;
-    width: 50%;
+    width: 100%;
+
+    @media #{$desktop-md} {
+      width: 50%;
+    }
   }
 
   .col-33 {
@@ -23,9 +27,15 @@
   }
 
   h2 {
-    font-size: 65px;
+    font-size: 55px;
     font-family: "Rasa", serif;
     color: $primary-blue;
+    text-align: center;
+
+    @media #{$desktop-md} {
+      font-size: 65px;
+      text-align: left;
+    }
   }
 
   .cards,
@@ -33,34 +43,51 @@
     display: flex;
   }
 
-  a.card-btn,
-  button.card-btn {
+  a.card-btn {
     padding: 10px 20px;
     display: flex;
-    max-width: 305px;
+    max-width: 250px;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     box-sizing: border-box;	
     border: 1px solid rgba(26,57,102,0.1);	
     border-radius: 6px;	
     background-color: #FFFFFF;	
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
     color: $primary-blue;
-    font-size:  17px;
+    font-size:  13px;
     outline: none;
+    margin: 0 auto;
+
+    @media #{$desktop-md} {
+      font-size:  17px;
+      justify-content: flex-start;
+      max-width: 305px;
+      margin: 0;
+    }
 
     .btn-text {
       text-transform: uppercase;
       font-weight: bold;
-      margin-right: 20px;
+      margin-right: 10px;
+
+      @media #{$desktop-md} {
+        margin-right: 20px;
+      }
     }
-    .btn-arrow {
-      width: 40px;
-      height: 40px;
+    .btn-icon {
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       border: 1px solid $secondary-blue;
       background: #eee;
-      padding: 10px;
+      padding: 5px;
+
+      @media #{$desktop-md} {
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+      }
     }
   }
 
@@ -69,11 +96,21 @@
   // === === === === === === //
 
   .section-top {
-    margin-bottom: 150px;
-    
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media #{$desktop-md} {
+      margin-bottom: 75px;
+    }
+
     .col-50.slider-wrapper {
-      padding-top: 50px;
-      padding-left: 50px;
+      padding-top: 25px;
+
+      @media #{$desktop-md} {
+        padding-top: 50px;  
+        padding-left: 50px;
+      }
     }
 
     h2 {
@@ -83,14 +120,32 @@
     h3 {
       font-size: 21px;
       margin-bottom: 25px;
+      color: $secondary-blue;
     }
 
     .cards {
-      margin-top: 90px;
+      margin-top: 50px;
+      
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+
+      @media #{$desktop-md} {
+        margin-top: 90px;
+        margin-bottom: 0;
+        flex-direction: row;
+      }
     }
 
     .card {
       text-align: center;
+      margin-bottom: 35px;
+
+      @media #{$desktop-md} {
+        margin-bottom: 0;
+      }
     }
     .card svg {
       position: relative;
@@ -156,31 +211,48 @@
   // === === === === === === //
 
   .section-bottom {
-    padding-top: 55px;
+    
     position: relative;
+    
+    @media #{$desktop-md} {
+      padding-top: 55px;
 
-    &:before {
-      content: "";
-      display: block;
-      position: absolute;
-      width: 40%;
-      height: 1px;
-      background: $primary-green;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 40%;
+        height: 1px;
+        background: $primary-green;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
+
+    
 
     .header-text-wrapper {
       display: flex;
+      flex-direction: column;
+
+      @media #{$desktop-md} {
+        flex-direction: row;
+      }
       .text-left {
         flex-basis: 60%;
         h2 {
           margin-bottom: 15px;
+          
         }
         p {
-          font-size: 18px;
-          line-height: 24px;
+          display: none;
+
+          @media #{$desktop-md} {
+            display: block;
+            font-size: 18px;
+            line-height: 24px;
+          }
         }
       }
       .text-right {
@@ -188,15 +260,22 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        padding-right: 75px;
+
+        @media #{$desktop-md} {
+          padding-right: 75px;
+        }
       }
     }
 
     .apartment-cards {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 100px;
+      display: none;
+
+      @media #{$desktop-md} {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 100px;
+      }
     }
     .apartment-cards .apartment-card {
       border: 1px solid $primary-green;

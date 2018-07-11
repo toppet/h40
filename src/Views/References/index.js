@@ -39,33 +39,10 @@ export default class References extends Component {
               <h3>Tekintse meg képeinket a KertVárosi Társasházról vagy látogassan el az oldalra!</h3>
               <a href="http://kertvarositarsashaz.hu/" target="_blank" rel="noopener noreferrer"type="button" className="card-btn">
                 <span className="btn-text">KERTVÁROSI TÁRSASHÁZ</span>
-                <ArrowForward className="btn-arrow" />
+                <ArrowForward className="btn-icon" />
               </a>              
-
-              <div className="cards">
-                <div className="card">
-                  <div className="icon-wrap">
-                    <Flare/>
-                  </div>
-                  <h4>Megbízható</h4>
-                  <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span>
-                </div>
-                <div className="card">
-                  <div className="icon-wrap">
-                    <Flare/>
-                    </div>
-                  <h4>Rugalmas</h4>
-                  <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span>
-                </div>
-                <div className="card">
-                  <div className="icon-wrap">
-                    <Flare/>
-                  </div>
-                  <h4>Elhivatott</h4>
-                  <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span>
-                </div>
-              </div>
             </div>
+            
             <div className="col-50 slider-wrapper">
               <Slider {...settings} className="page-slider">
                 <div className="slide-1">
@@ -79,6 +56,29 @@ export default class References extends Component {
                 </div>
               </Slider>
             </div>
+            <div className="cards">
+              <div className="card">
+                <div className="icon-wrap">
+                  <Flare/>
+                </div>
+                <h4>Megbízható</h4>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span>
+              </div>
+              <div className="card">
+                <div className="icon-wrap">
+                  <Flare/>
+                  </div>
+                <h4>Rugalmas</h4>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span>
+              </div>
+              <div className="card">
+                <div className="icon-wrap">
+                  <Flare/>
+                </div>
+                <h4>Elhivatott</h4>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span>
+              </div>
+            </div>
           </section>
           <section className="section-bottom">
             <div className="col-100">
@@ -88,10 +88,14 @@ export default class References extends Component {
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet augue bibendum, sodales <br/> metus quis, placerat lorem. Donec fermentum dui ac purus cursus hendrerit.</p>
                 </div>
                 <div className="text-right">
-                  <button type="button" className="card-btn">
+                 {/*  <button type="button" className="card-btn">
                     <span className="btn-text">ÖSSZES LAKÁS</span>
                     <Search className="btn-arrow" />
-                  </button> 
+                  </button>  */}
+                  <a href="/lakasok" className="card-btn">
+                    <span className="btn-text">ÖSSZES LAKÁS</span>
+                    <ArrowForward className="btn-icon" />
+                  </a>
                 </div>
               </div>
               <div className="apartment-cards">

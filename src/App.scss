@@ -42,13 +42,13 @@
     .page-content {
       padding: 6%;
       padding-bottom: 60px;
-      padding-top: 219px;
+      padding-top: 145px;
       width: 100%;
       // max-width: 1920px;
       margin: 0 auto;
 
       @media #{$desktop-md}{
-        padding: 10%;
+        padding: 10% 219px 60px;
       }
       
     }
