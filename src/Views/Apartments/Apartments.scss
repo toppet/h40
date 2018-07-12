@@ -31,6 +31,21 @@
     }
   }
 
+  .slider-wrapper {
+    // width: 250px;
+    // display: flex;
+    padding-bottom: 50px;
+    // flex: 1;
+    // flex-direction: column;
+    img {
+      max-height: 250px;
+
+      @media #{$desktop-md} {
+        max-height: initial;
+      }
+    }
+  }
+
   .hotspot-image-wrap {
     height: 1000px;
     background: $secondary-gray url('../../images/ACCamera_6.jpg');
@@ -45,12 +60,34 @@
     padding: 0 2%;
     margin: 85px 0;
 
+    &.mobile {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0;
+
+      @media #{$desktop-md} {
+        display: none;
+      }
+    }
+
+    &.desktop {
+      display: none;
+      
+      @media #{$desktop-md} {
+        display: block;
+      }
+    }
+
     .apartment-tabs {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       align-items: stretch;
       justify-content: center;
+    }
+
+    .apartment-tabs .apartment-tab-wrap {
+      width: 90%;
     }
     
     .apartment-tabs .tab {
@@ -108,6 +145,28 @@
         border: 1px solid $primary-orange;
         background: rgba(245,171,107,0.2);
       }
+      
+      // === === === === === //
+      // === MOBILE ONLY === //
+      // === === === === === //
+
+      & + .tab-content {
+        display: none;
+      }
+
+      &.active + .tab-content {
+        display: flex;
+        flex-direction: column;
+        padding: 18px;
+
+        
+
+        .slick-track {
+          width: 100% !important;
+          height: 260px;
+        }
+      }
+
 
       &.active .text {
         padding-top: 5px;
@@ -153,7 +212,10 @@
       background: #F8F9FC;
       display: flex;
       border-radius: 6px;
-      margin-top: 25px;
+      
+      @media #{$desktop-md} {
+        margin-top: 25px;
+      }
     }
     
     .tab-content .col-left {
@@ -175,40 +237,6 @@
         color: $primary-blue;
         margin-bottom: 65px;
       }
-      img {
-        width: 20px;
-        height: 20px;
-        margin-right: 20px;
-      }
-
-      .tag {
-        font-size: 13px;
-        color: #9B9B9B;
-        padding: 5px 20px;
-        text-transform: uppercase;
-        margin-bottom: 15px;
-        background: #fff;
-        display: inline-block;
-      }
-
-      .parameters {
-        display: flex;
-        flex-wrap: wrap;
-
-        .param-row {
-          display: flex;
-          width: 100%;
-          margin-bottom: 35px;
-
-          p span{
-            margin-left: 5px;
-          }
-        }
-      }
-      
-      .parameters p:nth-child(even) {
-        margin-left: 85px;
-      }
 
       p {
         display: flex;
@@ -217,51 +245,103 @@
         font-size: 20px;
         margin-right: 85px;
       }
+
+      .addition-attributes,
       .col-100 {
         display: inline-flex;
       }
-      .attachments-wrap {
-        margin-top: 100px;
+
+    }
+    .attachments-wrap {
+      margin-top: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+
+      @media #{$desktop-md} {
+        flex-direction: row;
+      }
+
+
+      a.card-btn {
+        padding: 10px 20px;
         display: flex;
+        max-width: 305px;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
+        box-sizing: border-box;	
+        border: 1px solid rgba(26,57,102,0.1);	
+        border-radius: 6px;	
+        background-color: #FFFFFF;	
+        box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
+        color: $primary-blue;
+        font-size:  17px;
+        outline: none;
+        width: 285px;
 
-        a.card-btn {
-          padding: 10px 20px;
-          display: flex;
-          max-width: 305px;
-          align-items: center;
-          justify-content: center;
-          box-sizing: border-box;	
-          border: 1px solid rgba(26,57,102,0.1);	
-          border-radius: 6px;	
-          background-color: #FFFFFF;	
-          box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
-          color: $primary-blue;
-          font-size:  17px;
-          outline: none;
-          width: 285px;
-
-          &.no-bg {
-            background: transparent;
-            border: none;
-            box-shadow: none;
-          }
-  
-          .btn-text {
-            text-transform: uppercase;
-            font-weight: bold;
-            margin-right: 20px;
-          }
-          .btn-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 1px solid $secondary-blue;
-            background: #eee;
-            padding: 10px;
-          }
+        &.no-bg {
+          background: transparent;
+          border: none;
+          box-shadow: none;
         }
+
+        .btn-text {
+          text-transform: uppercase;
+          font-weight: bold;
+          margin-right: 20px;
+        }
+        .btn-icon {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          border: 1px solid $secondary-blue;
+          background: #eee;
+          padding: 10px;
+        }
+      }
+    }
+
+    .tag {
+      font-size: 13px;
+      color: #9B9B9B;
+      padding: 5px 20px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      background: #fff;
+      display: inline-block;
+    }
+
+    .parameters {
+      display: flex;
+      flex-wrap: wrap;
+
+      .param-row {
+        display: flex;
+        width: 100%;
+        margin-bottom: 35px;
+
+        p span {
+          margin-left: 5px;
+          color: $secondary-blue;
+        }
+      }
+    }
+
+    img.attr-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+
+      @media #{$desktop-md} {
+        margin-right: 20px;
+      }
+    }
+    
+    .parameters p:nth-child(even) {
+      margin-left: 55px;
+      @media #{$desktop-md} {
+        margin-left: 85px;
       }
     }
 
@@ -278,18 +358,26 @@
       .slider-wrapper {
         display: block;
         width: 100%;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
       }
 
       .page-slider {
         flex: 1;
         margin-bottom: 50px;
+
         .slick-slide * {
           outline: none;
           position: relative;
         }
+
         img {
           position: absolute;
           width: 100%;
+          height: auto;
           // max-height: 100%;
           outline: none;
         }

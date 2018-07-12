@@ -177,8 +177,8 @@
 
       span:nth-child(1) {
         transform: rotate(45deg);
-        margin-top: 0px;
-        margin-left: 8px;
+        margin-top: 5%;
+        margin-left: 25%;
       }
       
       span:nth-child(2) {
@@ -188,8 +188,8 @@
       
       span:nth-child(3) {
         transform: rotate(-45deg);
-        margin-top: 10px;
-        margin-left: 8px;
+        margin-top: 30%;
+        margin-left: 25%;
       }
     }
 
@@ -285,16 +285,23 @@
       &.open .dropdown-menu {
         opacity: 1;
         visibility: visible;
-        background: red;
-        height: 225px;
+        background: $primary-gray;
+        height: 175px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         a {
+          color: white;
           display: flex;
           align-items: center;
           justify-content: center;
+        }
+        a svg {
+          display: none;
+          @media #{$desktop-md} {
+            display: inline-block;
+          }
         }
       }
 
