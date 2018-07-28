@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import { Mail } from '@material-ui/icons/';
+import scrollToComponent from 'react-scroll-to-component';
 
 import Navigation from '../../Components/Navigation';
 import Footer from '../../Components/Footer';
@@ -26,6 +27,13 @@ export default class Apartments extends Component {
     window.scrollTo(0, 0);
     this.updatePredicate();
     window.addEventListener("resize", () => this.updatePredicate());
+  }
+
+  handleScroll() {
+    window.scrollTo({
+      top: 875,
+      behavior: 'smooth',
+    });
   }
 
   componentWillUnmount() {
@@ -81,6 +89,31 @@ export default class Apartments extends Component {
       );
     }
 
+    const hotspots = Object.keys(apartmentData).map((a) => {
+      const ap = apartmentData[a];
+      const statusText = this.getStatusText(ap.status);
+      return (
+        <span 
+          key={a}
+          className={`hotspot-${a} ${ap.status} ${selectedTab === a ? 'active' : '' }`} 
+          onClick={() => this.setState({ selectedTab: a })}
+        >
+          <div className="hotspot-dialog">
+            <div className="title-row">
+              <h3>{a.toUpperCase()}</h3>
+              <span className={`tag ${ap.status}`}>{statusText}</span>
+            </div>
+            <div className="info-row">
+              
+            </div>
+            <span className="moreBtn" onClick={() => this.handleScroll()}>Részletes leírás</span>
+          </div>
+        </span>
+      )
+    }); 
+
+    // console.log(hotspots);
+
     return (
       <div className="ApartmentsPage">
         <Navigation btnVisible theme="light" />
@@ -90,9 +123,21 @@ export default class Apartments extends Component {
             <h1 className="title-left">Lakáskínálat</h1>
           </div>
 
-          <div className="hotspot-image-wrap"></div> 
+          <div className="hotspot-image-wrap">
+            <span className="building-initial initial-wrap-a">
+              <span className="initial-a">A</span>
+            </span>
+            <span className="building-initial initial-wrap-b">
+              <span className="initial-b">B</span>
+            </span>
+            
+            { hotspots }
+          
+          </div> 
 
-          {tabsContainter}
+          <div ref={(section) => { this.reszletek = section; }}>
+            {tabsContainter}
+          </div>
 
           <div className="comfy-location">
             <div className="col-30">

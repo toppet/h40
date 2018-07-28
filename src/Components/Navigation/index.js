@@ -19,7 +19,7 @@ export default class Navigation extends Component {
 
     if (this.props.btnVisible) {
       sellBtn = <NavLink className="sell-btn" exact to="/kapcsolat">
-        <button type="button">Értékesítés</button>
+        <button type="button">Kapcsolat</button>
       </NavLink>;
     }
 
@@ -56,7 +56,7 @@ export default class Navigation extends Component {
               </div>
               <NavLink exact to="/referenciak" activeClassName="selected">Referencia</NavLink>
               <NavLink exact to="/lakasok" activeClassName="selected">Lakások</NavLink>
-              <NavLink exact to="/kapcsolat" activeClassName="selected">Kapcsolat</NavLink>
+              <HashLink to="/kapcsolat/#miertminket">Miért minket</HashLink>
               {sellBtn}
             </div>
           </div>
@@ -88,7 +88,7 @@ export default class Navigation extends Component {
               </div>
               <NavLink exact to="/referenciak" activeClassName="selected">Referencia</NavLink>
               <NavLink exact to="/lakasok" activeClassName="selected">Lakások</NavLink>
-              <NavLink exact to="/kapcsolat" activeClassName="selected">Kapcsolat</NavLink>
+              <NavLink exact to="/kapcsolat" activeClassName="selected">Miért minket</NavLink>
               {sellBtn}
             </div>
           </div>

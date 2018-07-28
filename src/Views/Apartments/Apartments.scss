@@ -13,7 +13,7 @@
   
   .title-wrap {
     height: 250px;
-    background: url('../../images/ACCamera_6.jpg');
+    background: url('../../images/ACCamera_6.jpg') center center no-repeat;
     background-size: cover;
     position: relative;
     
@@ -27,7 +27,6 @@
       background-position: top right;
       height: auto;
     }
-
 
 
     h1 {
@@ -69,11 +68,201 @@
   }
 
   .hotspot-image-wrap {
+    display: none;
+    position: relative;
+
     @media screen and (min-width: 1280px) {
-      height: 1000px;
-      background: $secondary-gray url('../../images/ACCamera_6.jpg');
-      background-size: cover;
+      display: block;
+      height: auto;
+      min-height: 700px;
+      background: $secondary-gray url('../../images/hotspot-bg.jpg') no-repeat;
+      background-position: center center;
+      background-size: 100%;
     }
+
+    .building-initial {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      background-color: rgba(255,255,255,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+    }
+
+    .initial-a,
+    .initial-b {
+      width: 75px;
+      height: 75px;
+      
+      background: red;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      background-color: rgba(255,255,255,0.6);
+      font-family: 'Rasa', serif;
+      font-size: 58px;
+      color: $primary-blue;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .initial-wrap-a {
+      top: 5%;
+      left: 10%;
+    }
+    .initial-wrap-b {
+      right: 15%;
+      top: 17.5%;
+    }
+
+    .hotspot-a100,
+    .hotspot-a101,
+    .hotspot-a102,
+    .hotspot-a103,
+    .hotspot-a201,
+    .hotspot-b100,
+    .hotspot-b101 {
+      position: absolute;
+      display: block;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid $primary-blue;
+      background: $secondary-gray;
+      cursor: pointer;
+    }
+
+    .hotspot-a100 {
+      top: 55%;
+      left: 22.5%;
+      z-index: 15;
+      // background: red;
+    }
+
+    .hotspot-a101 {
+      top: 52.5%;
+      left: 35.5%;
+      z-index: 10;
+      // background: blue;
+    }
+
+    .hotspot-a102 {
+      top: 40.5%;
+      left: 20%;
+      z-index: 5;
+    }
+
+    .hotspot-a103 {
+      top: 37.5%;
+      left: 38%;
+    }
+
+    .hotspot-a201 {
+      top: 25.5%;
+      left: 28.5%;
+    }
+
+    .hotspot-b100 {
+      top: 52.5%;
+      right: 22.5%;
+    }
+
+    .hotspot-b101 {
+      top: 40.5%;
+      right: 27.5%;
+    }
+
+    [class^="hotspot"]:after {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    [class^="hotspot"].free:after {
+      background: $primary-green;
+    }
+
+    [class^="hotspot"].inprogress:after {
+      background: $primary-orange;
+    }
+
+    [class^="hotspot"].sold:after {
+      background: $primary-red;
+    }
+
+    .hotspot-dialog {
+      display: none;
+      position: absolute;
+      padding: 15px 20px;
+      background: #fff;
+      border: 1px solid rgba(26,57,102,0.1);
+      border-radius: 5px;
+      box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
+      margin-top: -75px;
+      width: 285px;
+    }
+
+    .hotspot-dialog .title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h3 {
+        color: $primary-blue;
+        font-size: 30px;
+        font-family: 'Rasa', serif;
+      }
+
+      .tag {
+        font-size: 10px;
+        padding: 5px 15px;
+        text-transform: uppercase;
+        border-radius: 5px;
+      }
+
+      .tag.free {
+        color: $primary-green;
+        background-color: rgba(108,233,134,0.1);
+        border: 1px solid $primary-green;
+      }
+      .tag.inprogress {
+        color: $primary-orange;
+        border: 1px solid $primary-orange;
+        background: rgba(245, 171, 107, 0.2);
+      }
+      .tag.sold {
+        color: $primary-red;
+        border: 1px solid $primary-red;
+        background: rgba(245, 97, 114, 0.2);
+      }
+    }
+
+    [class^="hotspot"].active .hotspot-dialog {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hotspot-dialog a {
+      color: $primary-blue;
+      font-size: 10px;
+      text-transform: uppercase;
+      padding: 10px 15px;
+      background-color: #F8F9FC;
+      border: 0.6px solid #DCDCDC;
+      border-radius: 4px;
+      display: inline-block;
+      margin: 0 auto;
+    }
+    
   }
   
   // === === === === === // 

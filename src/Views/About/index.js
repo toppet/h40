@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navigation from '../../Components/Navigation';
 import Footer from '../../Components/Footer';
 import { Email, Call, Directions, Place } from '@material-ui/icons/';
+import scrollToComponent from 'react-scroll-to-component';
 import './About.scss';
 
 export default class About extends Component {
@@ -11,11 +12,24 @@ export default class About extends Component {
   
   componentDidMount() {
     window.scrollTo(0, 0);
+    this.handleScroll();
+  }
+  
+  componenDidUdpdate() {
+    this.handleScroll();
   }
 
   handleTabChange(tab) {
-    console.log(tab);
     this.setState({ activeTab: tab });
+  }
+
+  handleScroll() {
+    if (this.props.location.hash) { 
+      const { hash } = this.props.location;
+      const where = hash.slice(1, hash.length);
+
+      scrollToComponent(this[where], { offset: -200, align: 'top', duration: 500 });
+    }
   }
   
   render() {
@@ -95,21 +109,7 @@ export default class About extends Component {
         
         <div className="page-content">
           <div className="content-row top">
-            <div className="col-50 fact-list-wrapper">
-              <h3>Miért minket</h3>
-              <ul className="fact-list">
-                <li>Mert hatalmasak az üvegfelületek, világosak a lakások.</li>
-                <li>Mert jó az elrendezés.</li>
-                <li>Mert saját kertem lesz, ha a földszintet választom.</li>
-                <li>Mert tágas teraszon fogom élvezni a napsütést.</li>
-                <li>Mert a garázsból liften megyek fel.</li>
-                <li>Mert nyáron hűtök, télen fűtök a saját hőszivattyúmmal.</li>
-                <li>Mert a penthouse szint csak az enyém, és a panoráma …</li>
-                <li>Mert értékálló az otthonom.</li>
-                <li>Mert a saját irodámban dolgozom.</li>
-                <li>Mert ha akarom, könnyen bérbe adom.</li>
-              </ul>
-            </div>
+            
             <div className="col-50">
               <div className="content-row manager-info-wrapper">
                 <div className="col-50">
@@ -163,8 +163,29 @@ export default class About extends Component {
               </div>
             </div>
         </div>
-        <div className="content-row bottom">
-          <div className="col-100">
+        <div className="content-row bottom" ref={(section) => { this.miertminket = section; }}>
+
+          <div className="col-100 fact-list-wrapper">
+            <h3>Miért minket</h3>
+            <ul className="fact-list">
+              <div className="col-50">
+                <li>Mert hatalmasak az üvegfelületek, világosak a lakások.</li>
+                <li>Mert jó az elrendezés.</li>
+                <li>Mert saját kertem lesz, ha a földszintet választom.</li>
+                <li>Mert tágas teraszon fogom élvezni a napsütést.</li>
+                <li>Mert a garázsból liften megyek fel.</li>
+              </div>
+              <div className="col-50">
+                <li>Mert nyáron hűtök, télen fűtök a saját hőszivattyúmmal.</li>
+                <li>Mert a penthouse szint csak az enyém, és a panoráma …</li>
+                <li>Mert értékálló az otthonom.</li>
+                <li>Mert a saját irodámban dolgozom.</li>
+                <li>Mert ha akarom, könnyen bérbe adom.</li>
+              </div>
+            </ul>
+          </div>
+
+          {/* <div className="col-100">
             <div className="tabs-wrapper">
               <div className="tab-headers">
                 <span className={`tab ${this.state.activeTab === 0 ? 'active' : '' }`} onClick={() => this.handleTabChange(0)}>LAKÁSOK PONTOS CÍME</span>
@@ -174,7 +195,8 @@ export default class About extends Component {
                 {tabContent}
               </div>
             </div>
-          </div>
+          </div> */}
+
         </div>
       </div>
         
