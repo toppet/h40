@@ -29,6 +29,7 @@ export default class DesktopApartmentTabs extends React.Component {
     
     return (
       <div className="apartment-tabs-wrap desktop">
+      
           <div className="apartment-tabs">
           {
             _.map(apartmentData, (ap, key) =>(

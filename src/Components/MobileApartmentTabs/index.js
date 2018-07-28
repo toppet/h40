@@ -64,7 +64,7 @@ export default class MobileApartmentTabs extends React.Component {
 
     return (
       <div className="apartment-tabs-wrap mobile">
-        <div className="slider-wrapper">
+        {/* <div className="slider-wrapper">
           <Slider {...settings} className="page-slider">
             <div className="slide-1">
               <img src={ap1} alt="apartment-1"/>
@@ -76,7 +76,7 @@ export default class MobileApartmentTabs extends React.Component {
               <img src={ap3} alt="apartment-3"/>
             </div>
           </Slider>
-        </div>
+        </div> */}
 
         <div className="apartment-tabs">
         {
@@ -113,9 +113,6 @@ export default class MobileApartmentTabs extends React.Component {
                       <h4 className="tag">MŰSZAKI FELSZERELTSÉG</h4>
                       <p className="appliances-text"><img className="attr-icon" src={legkondi} alt="legkondi"/>{ap.appliances}</p>
                     </div>
-                   
-                      
-                    
                   </div>
 
                   <div className="attachments-wrap">

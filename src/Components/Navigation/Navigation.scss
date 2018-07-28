@@ -28,7 +28,7 @@
       display: flex;
       align-items: center;
 
-      @media #{$desktop-md} {
+      @media screen and (min-width: 1280px) {
         border-right: 1px solid white;
       }
 
@@ -53,7 +53,7 @@
       .lang-text {
         display: none;
 
-        @media #{$desktop-md} {
+        @media screen and (min-width: 1280px) {
           display: inline-block;
         }
       }
@@ -67,7 +67,7 @@
       display: flex;
       align-items: center;
 
-      @media #{$desktop-md} {
+      @media screen and (min-width: 1280px) {
         margin-right: 150px;
         padding-left: 25px;
       }
@@ -82,7 +82,7 @@
         height: 15px;
         margin-right: 8px;
 
-        @media #{$desktop-md} {
+        @media screen and (min-width: 1280px) {
           width: 19px;
          height: 19px;
         }
@@ -122,7 +122,7 @@
       display: none;
     }
 
-    @media #{$desktop-md} {
+    @media screen and (min-width: 1280px) {
       &.mobile {
         display: none;
       }
@@ -139,6 +139,9 @@
 
       .h40-logo {
         font-size: 50px;
+        a {
+
+        }
       }
 
       .menu-btn {
@@ -151,7 +154,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: space-around;
 
         span {
           display: block;
@@ -177,19 +180,19 @@
 
       span:nth-child(1) {
         transform: rotate(45deg);
-        margin-top: 5%;
-        margin-left: 25%;
+        margin-top: 0;
+        margin-left: 8px;
       }
       
       span:nth-child(2) {
-        width: 0%;
+        width: 0;
         opacity: 0;
       }
       
       span:nth-child(3) {
         transform: rotate(-45deg);
-        margin-top: 30%;
-        margin-left: 25%;
+        margin-top: 0;
+        margin-left: 8px;
       }
     }
 
@@ -199,14 +202,14 @@
       flex-direction: row; 
       flex: 1;
       
-      @media #{$desktop-md} {
+      @media screen and (min-width: 1280px) {
         padding: 30px 115px;
         padding-bottom: 20px;
       }
 
     }
     
-    .h40-logo {
+    .h40-logo a {
       font-size: 60px;
       font-family: 'Rasa', serif;
       color: white;
@@ -214,7 +217,9 @@
     }
 
     &.light .h40-logo {
-      color: $primary-green;
+      
+      a { color: $primary-green; }
+
       span {
         color: $primary-blue;
       }
@@ -236,12 +241,12 @@
       color: rgba(255,255,255,0.7);
       text-decoration: none;
       text-transform: uppercase;
-      font-size: 12px;
+      font-size: 13px;
       width: 100%;
       text-align: center;
       padding: 15px 0;
       
-      @media #{$desktop-md} {
+      @media screen and (min-width: 1280px) {
         margin-right: 30px;
         font-size: 15px;
         width: auto;
@@ -299,7 +304,7 @@
         }
         a svg {
           display: none;
-          @media #{$desktop-md} {
+          @media screen and (min-width: 1280px) {
             display: inline-block;
           }
         }
@@ -323,7 +328,7 @@
       }
 
 
-      @media #{$desktop-md} {
+      @media screen and (min-width: 1280px) {
         padding: 10px 0;
         margin-right: 5px;
         cursor: pointer;
@@ -352,7 +357,7 @@
           overflow: hidden;
           background: white;
           position: absolute;
-          width: 255px;
+          width: 300px;
           border-radius: 6px;
           box-shadow: 0 2px 5px 0 rgba(0,0,0,0.05);
 
@@ -399,7 +404,7 @@
         font-weight: bold;
         text-transform: uppercase;
 
-        @media #{$desktop-md} {
+        @media screen and (min-width: 1280px) {
           font-size: 15px;
           padding: 18px 35px;
         }

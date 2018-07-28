@@ -42,7 +42,7 @@ export default class Navigation extends Component {
         </div>
         <div className={`nav-bar desktop ${theme}`}>
           <div className="navbar-content">
-            <div className="h40-logo"><span>H</span>40</div>
+            <div className="h40-logo"><a href="/"><span>H</span>40</a></div>
             <div className="nav-links">
               <NavLink exact to="/" activeClassName="selected">Főoldal</NavLink>
               <div className="dropdown">
@@ -50,11 +50,10 @@ export default class Navigation extends Component {
                 <div className="dropdown-menu">
                   <HashLink to='/#epuletek' replace>Épületek <ExpandMore /></HashLink>
                   <HashLink to='/#jellemzok' replace>Jellemzők <ExpandMore /></HashLink>
-                  <HashLink to='/#muszaki-tartalom'>Műszaki tartalom <ExpandMore /></HashLink>
-                  <HashLink to='/#muszaki-alaprajz'>Műszaki alaprajzok <ExpandMore /></HashLink>
+                  <HashLink to='/#dokumentumok'>Műszaki adatok / alaprajzok <ExpandMore /></HashLink>
+                  <HashLink to="/#helyszin">Helyszín &amp; környék <ExpandMore /></HashLink>
                 </div>
               </div>
-              <NavLink exact to="/helyszin" activeClassName="selected">Helyszín &amp; környék</NavLink>
               <NavLink exact to="/referenciak" activeClassName="selected">Referencia</NavLink>
               <NavLink exact to="/lakasok" activeClassName="selected">Lakások</NavLink>
               <NavLink exact to="/kapcsolat" activeClassName="selected">Kapcsolat</NavLink>
@@ -67,7 +66,7 @@ export default class Navigation extends Component {
        
         <div className={`nav-bar mobile ${theme} ${this.state.isOpen ? 'open' : ''}`}>
           <div className="nav-bar-header">
-            <div className="h40-logo"><span>H</span>40</div>
+            <div className="h40-logo"><a href="/"><span>H</span>40</a></div>
             <div className="menu-btn" onClick={() => this.setState({ isOpen: !this.state.isOpen })}>
               <span></span>
               <span></span>
@@ -80,13 +79,13 @@ export default class Navigation extends Component {
               <div className={`dropdown ${this.state.isDropDownOpen ? 'open' : ''}`}>
                 <span onClick={() => this.setState({ isDropDownOpen: !this.state.isDropDownOpen })}>Ismertető <ExpandMore /></span>
                 <div className="dropdown-menu">
-                  <HashLink to='/#epuletek' replace  onClick={() => this.setState({ isOpen: false })}>Épületek <ExpandMore /></HashLink>
-                  <HashLink to='/#jellemzok' replace  onClick={() => this.setState({ isOpen: false })}>Jellemzők <ExpandMore /></HashLink>
-                  <HashLink to='/#muszaki-tartalom'  onClick={() => this.setState({ isOpen: false })}>Műszaki tartalom <ExpandMore /></HashLink>
-                  <HashLink to='/#muszaki-alaprajz'  onClick={() => this.setState({ isOpen: false })}>Műszaki alaprajzok <ExpandMore /></HashLink>
+                  <HashLink to='/#epuletek' replace onClick={() => this.setState({ isOpen: false })}>Épületek</HashLink>
+                  <HashLink to='/#jellemzok' replace onClick={() => this.setState({ isOpen: false })}>Jellemzők</HashLink>
+                  <HashLink to='/#dokumentumok' onClick={() => this.setState({ isOpen: false })}>Műszaki adatok / alaprajzok</HashLink>
+                  <HashLink to="/#helyszin" onClick={() => this.setState({ isOpen: false })}>Helyszín &amp; környék</HashLink>
+                  {/* <HashLink to='/#muszaki-alaprajz' onClick={() => this.setState({ isOpen: false })}>Műszaki alaprajzok <ExpandMore /></HashLink> */}
                 </div>
               </div>
-              <NavLink exact to="/helyszin" activeClassName="selected">Helyszín &amp; környék</NavLink>
               <NavLink exact to="/referenciak" activeClassName="selected">Referencia</NavLink>
               <NavLink exact to="/lakasok" activeClassName="selected">Lakások</NavLink>
               <NavLink exact to="/kapcsolat" activeClassName="selected">Kapcsolat</NavLink>

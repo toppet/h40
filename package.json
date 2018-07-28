@@ -41,6 +41,7 @@
     "react-dev-utils": "^5.0.1",
     "react-dom": "^16.4.1",
     "react-router-hash-link": "^1.2.0",
+    "react-scroll-to-component": "^1.0.2",
     "react-scrollable-anchor": "^0.6.1",
     "react-slick": "^0.23.1",
     "resolve": "1.6.0",

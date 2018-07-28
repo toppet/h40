@@ -20,19 +20,34 @@ import family from '../../images/family.jpg';
 import { ArrowForward, ArrowDownward } from '@material-ui/icons/';
 import './Home.scss';
 
-export default class Home extends Component {
+import scrollToComponent from 'react-scroll-to-component';
 
+export default class Home extends Component {
+  
   componentDidMount() {
     window.scrollTo(0, 0);
+    this.handleScroll();
+  }
+
+  componentDidUpdate() {
+    this.handleScroll();
+  }
+
+  handleScroll() {
+    if (this.props.location.hash) { 
+      const { hash } = this.props.location;
+      const where = hash.slice(1, hash.length);
+
+      scrollToComponent(this[where], { offset: -200, align: 'top', duration: 500 });
+    }
   }
 
   render() {
-    // console.log('this.props', this.props);
     const mainSliderSettings = {
       dots: true,
       arrows: true,
-      // autoplay: true,
-      // autoplaySpeed: 4000,
+      autoplay: true,
+      autoplaySpeed: 4000,
       responsive: [
         {
           breakpoint: 480,
@@ -54,9 +69,15 @@ export default class Home extends Component {
       infinite: true,
     };
 
+    
     return (
       <div className="HomePage">
-        <Navigation btnVisible theme="dark"/>
+        
+        <Navigation 
+          btnVisible 
+          theme="dark"
+        />
+
         <div className="page-content">
           
           {/* === TOP SLIDER === */}
@@ -85,8 +106,8 @@ export default class Home extends Component {
           {/*  === === === === === === */}
           {/*  === BUILDINGS === */}
           {/*  === === === === === === */}
-          
-         <section className="buildings" id="epuletek">
+         
+         <section className="buildings" ref={(section) => { this.epuletek = section; }}>
             <div className="section-header">
               <h3 className="section-title">Épületek</h3>
               <div className="section-header-text">
@@ -112,7 +133,7 @@ export default class Home extends Component {
           {/*  === === === === === === */}
           
           
-           <section className="attributes" id="jellemzok">
+           <section className="attributes" ref={(section) => { this.jellemzok = section; }}>
 
             <h3 className="section-title">Jellemzők</h3>
             <p>Klimatizálás<img src={legkondi} alt="klima" />felsőfokon</p>
@@ -124,10 +145,11 @@ export default class Home extends Component {
                   <h4>Hőszivattyú</h4>
                   <p>Our fully integrated digital team of more than 200 dedicated digital strategists, technologists, producers.</p>
                 </div>
-                <button type="button" className="card-btn">
+
+                <a href="/lakasok" target="_self" type="button" className="card-btn">
                   <span className="btn-text">Lakások</span>
                   <ArrowForward className="btn-arrow" />
-                </button>
+                </a>
               </div>
               <div className="attribute-card">
                 <span className="inital-letter">A<img src={ablakok} alt="ablakok"/></span>
@@ -135,10 +157,10 @@ export default class Home extends Component {
                   <h4>Háromrétegű műanyag ablakok</h4>
                   <p>Our fully integrated digital team of more than 200 dedicated digital strategists, technologists, producers.</p>
                 </div>
-                <button type="button" className="card-btn">
+                <a href="/lakasok" target="_self" type="button" className="card-btn">
                   <span className="btn-text">Lakások</span>
                   <ArrowForward className="btn-arrow" />
-                </button>
+                </a>
               </div>
               <div className="attribute-card">
                 <span className="inital-letter">R<img src={redonyok} alt="redonyok"/></span>
@@ -146,10 +168,10 @@ export default class Home extends Component {
                   <h4>Motoros redőnyök</h4>
                   <p>Our fully integrated digital team of more than 200 dedicated digital strategists, technologists, producers.</p>
                 </div>
-                <button type="button" className="card-btn">
+                <a href="/lakasok" target="_self" type="button" className="card-btn">
                   <span className="btn-text">Lakások</span>
                   <ArrowForward className="btn-arrow" />
-                </button>
+                </a>
               </div>
               <div className="attribute-card">
                 <span className="inital-letter">T<img src={tavvezerles} alt="tavvezerles"/></span>
@@ -157,10 +179,10 @@ export default class Home extends Component {
                   <h4>Távolról vezérelhető</h4>
                   <p>Our fully integrated digital team of more than 200 dedicated digital strategists, technologists, producers.</p>
                 </div>
-                <button type="button" className="card-btn">
+                <a href="/lakasok" target="_self" type="button" className="card-btn">
                   <span className="btn-text">Lakások</span>
                   <ArrowForward className="btn-arrow" />
-                </button>
+                </a>
               </div>
             </div>
 
@@ -171,10 +193,15 @@ export default class Home extends Component {
               </div> 
               <div className="building-a-b-middle">
                 <h3>2 épület,<br/>7 lehetőség</h3>
-                <button type="button">
+                {/* <button type="button">
                   <span className="btn-text">Lakásajánlat</span>
                   <ArrowForward className="btn-arrow" />
-                </button>
+                </button> */}
+
+                <a href="/lakasok" target="_self" type="button" className="card-btn">
+                  <span className="btn-text">Lakásajánlat</span>
+                  <ArrowForward className="btn-arrow" />
+                </a>
               </div>
               <div className="building-b">
                 <span className="building-initial">B</span>
@@ -182,7 +209,7 @@ export default class Home extends Component {
               </div>
             </div>
 
-            <div className="documents-wrap" id="muszaki-tartalom">
+            <div className="documents-wrap" id="muszaki-tartalom" ref={(section) => { this.dokumentumok = section; }}>
               <p><img src={tartalom} alt="tartalom"/> MŰSZAKI TARTALOM <button type="button" className="btn-download"><ArrowDownward /></button></p>
               <p><img src={alaprajz} alt="alaprajz"/> MŰSZAKI ALAPRAJZOK <button type="button" className="btn-download"><ArrowDownward /></button></p>
             </div>
@@ -190,6 +217,70 @@ export default class Home extends Component {
           </section>
 
           {/*  === LOCATION AND NEIGHBOURHOOD === */}
+          <section className="location" ref={(section) => this.helyszin = section }>
+            <div className="section-header">
+              <h3 className="section-title">Helyszín és környék</h3>
+              <p className="section-header-text">
+              Budapest északi, legzöldebb részén a II. kerületben , Budaligeten építünk két házat Budapest talán legtisztább levegőjű helyén, gyakorlatilag a Budapestet friss levegővel ellátó szélcsatorna kezdetén ,a  Honfoglalás út 40. szám alatt. Itt találtunk rá egy olyan telekre ahol a friss levegő, a napfény és a - felső szintekről – a panoráma olyan kombinációját sikerült megtervezni amely remélhetőleg a benne lakók teljes megelégedésére szolgál. 
+              </p>
+            </div>
+
+            <div className="section-content">
+
+              <div className="main-left">
+                <div className="box-1">
+                  <h3>Környezet</h3>
+                </div>
+                <div className="box-2">
+                  <p>A piac által magasan értékelt helyen, biztonságos környéken építünk. Házaink környezetében kizárólag családi házak, és társasházi lakások találhatók sok-sok zölddel. Séta távolságban erdő, mókusok, madarak mindenhol.</p>
+                </div>
+                
+                <div className="box-4">
+                  <p>A magyar óvodák és iskolák mellett, a Francia Nemzetközi Iskola gyalog 5-10 perc,a Spanyol -és az Amerikai Nemzetközi Iskola autóval 10-15percen belül elérhető.</p>
+                </div>
+                <div className="box-5">
+                  <h3>Oktatás</h3>
+                </div>
+                <div className="box-6">
+                  <h3>Közlekedés</h3>
+                </div>
+                <div className="box-7">
+                  <p>A házak  előtt van a 157-es, és a 157A  buszok megállója amelyekkel a Hűvösvölgyi végállomás 12 perces menetidővel ,innen a Széll Kálmán tér 17 perces villamos úttal elérhető. Autóval  forgalomtól függően ugyanez 15-25 perc. (BKK)</p>
+                </div>
+              </div>
+
+              <div className="main-right">
+                <div className="box-3">
+                  <iframe 
+                    title="tab-1-directions"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2695.5936663648663!2d19.05203241576354!3d47.497828603478645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741dc41d2b5e169%3A0xef31e078a69625ad!2zQnVkYXBlc3QsIERlw6FrIEZlcmVuYyB0w6ly!5e0!3m2!1shu!2shu!4v1530380348170"
+                  >
+                  </iframe>
+                </div>
+                <div className="box-8">
+                  <p>A HÜVI és a StopShop bevásárlóközpontok 5-10 percen belül elérhetők autóval , egy helyi kis élelmiszerüzlet 10  perces sétával vagy 2 perces autóúttal.</p>
+                </div>
+                <div className="box-9">
+                  <h3>Bevásárlás</h3>
+                </div>
+              </div>
+
+              <div className="main-bottom">
+                <div className="box-10">
+                  <p>2019-ben kerül átadásra a környék várva várt uszodája, a Francia Nemzetközi Iskolával átellenben, tőlünk 10-15 perces  sétatávolságra.</p>
+                </div>
+                <div className="box-11">
+                  <h3>Sport &amp; Szabadidő</h3>
+                </div>
+                <div className="box-12">
+                  <p>Itt található a Hidegkúti szabadidőpark is, futball pályával, teniszpályával, rekortánnal borított futókörrel szabadtéri erősítő eszközökkel. A volt vitorlázó repülőtér és a Hűvösvölgyi nagyrét 5-8 perces autóúttal elérhető. Az erdő 300m-en belül kezdődik.</p>
+                </div>
+              </div>
+            
+            </div>
+          </section>
+
+
           {/*  === INVESTMENT === */}
           <section className="investment" id="befektetoknek">
             <div className="section-header">

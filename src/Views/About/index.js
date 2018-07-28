@@ -114,7 +114,7 @@ export default class About extends Component {
               <div className="content-row manager-info-wrapper">
                 <div className="col-50">
                   <h3>Eppel László</h3>
-                  <p>projectmenedzser</p>
+                  <p>tulajdonos - ügyvezető</p>
                 </div>
                 <div className="col-50 contact-info">
 
@@ -157,6 +157,7 @@ export default class About extends Component {
                     <div className="form-row">
                       <textarea name="message" id="message" rows="10" placeholder="Üzenet számunkra"></textarea>
                     </div>
+                    <button type="submit">Küldés</button>
                   </form>
                 </div>
               </div>

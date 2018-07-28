@@ -15,8 +15,7 @@
   .col-50 {
     display: block;
     width: 100%;
-
-    @media #{$desktop-md} {
+    @media screen and (min-width: 1280px) {
       width: 50%;
     }
   }
@@ -32,7 +31,7 @@
     color: $primary-blue;
     text-align: center;
 
-    @media #{$desktop-md} {
+    @media screen and (min-width: 1280px) {
       font-size: 65px;
       text-align: left;
     }
@@ -59,7 +58,7 @@
     outline: none;
     margin: 0 auto;
 
-    @media #{$desktop-md} {
+    @media screen and (min-width: 1280px) {
       font-size:  17px;
       justify-content: flex-start;
       max-width: 305px;
@@ -71,7 +70,7 @@
       font-weight: bold;
       margin-right: 10px;
 
-      @media #{$desktop-md} {
+      @media screen and (min-width: 1280px) {
         margin-right: 20px;
       }
     }
@@ -83,7 +82,7 @@
       background: #eee;
       padding: 5px;
 
-      @media #{$desktop-md} {
+      @media screen and (min-width: 1280px) {
         width: 40px;
         height: 40px;
         padding: 10px;
@@ -98,16 +97,18 @@
   .section-top {
     margin-bottom: 50px;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
 
-    @media #{$desktop-md} {
+    @media screen and (min-width: 1280px) {
+      flex-direction: row;
       margin-bottom: 75px;
     }
 
     .col-50.slider-wrapper {
       padding-top: 25px;
 
-      @media #{$desktop-md} {
+      @media screen and (min-width: 1280px) {
         padding-top: 50px;  
         padding-left: 50px;
       }
@@ -132,7 +133,7 @@
       align-items: center;
       justify-content: space-around;
 
-      @media #{$desktop-md} {
+      @media screen and (min-width: 1280px) {
         margin-top: 90px;
         margin-bottom: 0;
         flex-direction: row;
@@ -143,7 +144,7 @@
       text-align: center;
       margin-bottom: 35px;
 
-      @media #{$desktop-md} {
+      @media screen and (min-width: 1280px) {
         margin-bottom: 0;
       }
     }
@@ -214,7 +215,7 @@
     
     position: relative;
     
-    @media #{$desktop-md} {
+    @media screen and (min-width: 1280px) {
       padding-top: 55px;
 
       &:before {
@@ -236,7 +237,7 @@
       display: flex;
       flex-direction: column;
 
-      @media #{$desktop-md} {
+      @media screen and (min-width: 1280px) {
         flex-direction: row;
       }
       .text-left {
@@ -248,7 +249,7 @@
         p {
           display: none;
 
-          @media #{$desktop-md} {
+          @media screen and (min-width: 1280px) {
             display: block;
             font-size: 18px;
             line-height: 24px;
@@ -261,7 +262,7 @@
         align-items: center;
         justify-content: flex-end;
 
-        @media #{$desktop-md} {
+        @media screen and (min-width: 1280px) {
           padding-right: 75px;
         }
       }
@@ -270,7 +271,7 @@
     .apartment-cards {
       display: none;
 
-      @media #{$desktop-md} {
+      @media screen and (min-width: 1280px) {
         display: flex;
         align-items: center;
         justify-content: space-between;
