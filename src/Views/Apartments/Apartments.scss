@@ -207,7 +207,7 @@
       border: 1px solid rgba(26,57,102,0.1);
       border-radius: 5px;
       box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
-      margin-top: -75px;
+      margin-top: -225px;
       width: 285px;
     }
 
@@ -215,6 +215,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      margin-bottom: 15px;
 
       h3 {
         color: $primary-blue;
@@ -246,12 +247,42 @@
       }
     }
 
+    .hotspot-dialog .info-row {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 20px;
+      align-items: center;
+      justify-content: flex-start;
+
+      .ap-info {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .ap-info.size {
+        margin-right: 15px;
+      }
+
+      .ap-info .title {
+        font-family: 'Rasa', serif;
+        color: $primary-blue;
+        font-size: 15px;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+      }
+
+      .ap-info .info-text {
+        color: $secondary-blue;
+        font-size: 13px;
+      }
+    }
+
     [class^="hotspot"].active .hotspot-dialog {
       display: flex;
       flex-direction: column;
     }
 
-    .hotspot-dialog a {
+    .hotspot-dialog .moreBtn {
       color: $primary-blue;
       font-size: 10px;
       text-transform: uppercase;
@@ -606,6 +637,68 @@
           // max-height: 100%;
           outline: none;
         }
+      }
+    }
+  }
+
+  // === === === === === === // 
+  // === PRICE TABLE === // 
+  // === === === === === === // 
+
+  .price-table {
+    overflow-x: auto;
+    margin: 15px;
+
+    table {
+      border-collapse: collapse;
+
+      @media screen and (min-width: 1280px) {
+        margin: 0 auto;
+      }
+    }
+
+    th {
+      min-width: 120px;
+      background: #f8f9fc;
+      color: $primary-blue;
+      font-weight: bold;
+    }
+    
+    th,td {
+      padding: 10px 5px;
+      text-align: center;
+    }
+
+    td {
+      color: $secondary-blue;
+      font-weight: bold;
+      min-width: 150px;
+      padding: 15px 0;
+
+      @media screen and (min-width: 1280px) {
+        padding: 20px 0;
+      }
+    }
+
+    tbody tr {
+      border-bottom: 2px solid #dcdcdc;
+    }
+
+    .table-header-row .table-header {
+      display: inline-block;
+    }
+
+    td span.free {
+      padding: 5px 10px;
+      color: $primary-green;
+      border: 1px solid $primary-green;
+      border-radius: 5px;
+      background: rgba(108, 233, 134, 0.1);
+      font-size: 10px;
+      text-transform: uppercase;
+      
+      @media screen and (min-width: 1280px) {
+        font-size: 13px;
       }
     }
   }

@@ -181,7 +181,7 @@
       span:nth-child(1) {
         transform: rotate(45deg);
         margin-top: 0;
-        margin-left: 8px;
+        margin-left: 25%;
       }
       
       span:nth-child(2) {
@@ -192,7 +192,7 @@
       span:nth-child(3) {
         transform: rotate(-45deg);
         margin-top: 0;
-        margin-left: 8px;
+        margin-left: 25%;
       }
     }
 
@@ -209,18 +209,34 @@
 
     }
     
+    .h40-logo {
+      display: flex;
+    }
+
     .h40-logo a {
       font-size: 60px;
       font-family: 'Rasa', serif;
       color: white;
       margin-right: 60px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .h40-logo .residence {
+      display: block;
+      font-size: 17px;
+      text-transform: uppercase;
+      font-family: 'Lato', sans-serif;
+      font-weight: 200;
+      color: #50e3c2;
+      margin-top: -10px;
     }
 
     &.light .h40-logo {
       
       a { color: $primary-green; }
 
-      span {
+      .number-40 {
         color: $primary-blue;
       }
     }

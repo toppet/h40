@@ -7,14 +7,13 @@ import "slick-carousel/slick/slick-theme.css";
 import legkondi from '../../images/legkondi.svg'; 
 import hoszivattyu from '../../images/hoszivattyu.svg'; 
 import ablakok from '../../images/ablakok.svg'; 
+import ablak from '../../images/ablak.svg'; 
 import redonyok from '../../images/redonyok.svg'; 
+import redony from '../../images/redony.svg'; 
 import tavvezerles from '../../images/tavolivezerles.svg';
 import alaprajz from '../../images/muszaki_alaprajzok.svg';
 import tartalom from '../../images/muszaki_tartalom.svg';
 import dollar from '../../images/dollar.svg';
-import render_1 from '../../images/ACCamera_6.jpg';
-import render_2 from '../../images/ACCamera_6.jpg';
-import render_3 from '../../images/ACCamera_6.jpg';
 import investors from '../../images/investors.jpg';
 import family from '../../images/family.jpg';
 import { ArrowForward, ArrowDownward } from '@material-ui/icons/';
@@ -55,9 +54,6 @@ export default class Home extends Component {
             arrows: false,
           }
         }
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
       ],
     };
     
@@ -152,7 +148,7 @@ export default class Home extends Component {
                 </a>
               </div>
               <div className="attribute-card">
-                <span className="inital-letter">A<img src={ablakok} alt="ablakok"/></span>
+                <span className="inital-letter">A<img src={ablak} alt="ablak"/></span>
                 <div className="card-text">
                   <h4>Háromrétegű műanyag ablakok</h4>
                   <p>Our fully integrated digital team of more than 200 dedicated digital strategists, technologists, producers.</p>
@@ -163,7 +159,7 @@ export default class Home extends Component {
                 </a>
               </div>
               <div className="attribute-card">
-                <span className="inital-letter">R<img src={redonyok} alt="redonyok"/></span>
+                <span className="inital-letter">R<img src={redony} alt="redony"/></span>
                 <div className="card-text">
                   <h4>Motoros redőnyök</h4>
                   <p>Our fully integrated digital team of more than 200 dedicated digital strategists, technologists, producers.</p>

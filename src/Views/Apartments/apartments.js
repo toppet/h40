@@ -8,6 +8,7 @@ const apartmentData = {
     kitchen: 'amerikai konyha',
     floor: 'földszint, kerti ki- és bejárattal',
     appliances: 'mennyezet hűtés',
+    floorNumber: 'Földszint',
   },
   a101: {
     status: 'free',
@@ -18,6 +19,7 @@ const apartmentData = {
     kitchen: 'amerikai konyha',
     floor: 'földszint, kerti ki- és bejárattal',
     appliances: 'mennyezet hűtés',
+    floorNumber: 'Földszint',
   },
   a102: {
     status: 'free',
@@ -28,6 +30,7 @@ const apartmentData = {
     kitchen: 'amerikai konyha',
     floor: 'földszint, kerti ki- és bejárattal',
     appliances: 'mennyezet hűtés',
+    floorNumber: '1. emelet'
   },
   a103: {
     status: 'sold',
@@ -38,6 +41,7 @@ const apartmentData = {
     kitchen: 'amerikai konyha',
     floor: 'földszint, kerti ki- és bejárattal',
     appliances: 'mennyezet hűtés',
+    floorNumber: '1. emelet'
   },
   a201: {
     status: 'inprogress',
@@ -48,6 +52,7 @@ const apartmentData = {
     kitchen: 'amerikai konyha',
     floor: 'földszint, kerti ki- és bejárattal',
     appliances: 'mennyezet hűtés',
+    floorNumber: '2.emelet'
   },
   b100: {
     status: 'free',
@@ -58,6 +63,7 @@ const apartmentData = {
     kitchen: 'amerikai konyha',
     floor: 'földszint, kerti ki- és bejárattal',
     appliances: 'mennyezet hűtés',
+    floorNumber: 'Földszint'
   },
   b101: {
     status: 'inprogress',
@@ -68,6 +74,7 @@ const apartmentData = {
     kitchen: 'amerikai konyha',
     floor: 'földszint, kerti ki- és bejárattal',
     appliances: 'mennyezet hűtés',
+    floorNumber: '1-2. emelet',
   },
 };
 

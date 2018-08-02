@@ -18,9 +18,9 @@ export default class Navigation extends Component {
     let sellBtn = null;
 
     if (this.props.btnVisible) {
-      sellBtn = <NavLink className="sell-btn" exact to="/kapcsolat">
+      sellBtn = <a className="sell-btn" href="/kapcsolat">
         <button type="button">Kapcsolat</button>
-      </NavLink>;
+      </a>;
     }
 
     const theme = this.props.theme;
@@ -42,7 +42,7 @@ export default class Navigation extends Component {
         </div>
         <div className={`nav-bar desktop ${theme}`}>
           <div className="navbar-content">
-            <div className="h40-logo"><a href="/"><span>H</span>40</a></div>
+            <div className="h40-logo"><a href="/"><span>H<span className="number-40">40</span></span><span className="residence">Residence</span></a></div>
             <div className="nav-links">
               <NavLink exact to="/" activeClassName="selected">Főoldal</NavLink>
               <div className="dropdown">
@@ -55,8 +55,8 @@ export default class Navigation extends Component {
                 </div>
               </div>
               <NavLink exact to="/referenciak" activeClassName="selected">Referencia</NavLink>
-              <NavLink exact to="/lakasok" activeClassName="selected">Lakások</NavLink>
-              <HashLink to="/kapcsolat/#miertminket">Miért minket</HashLink>
+              <NavLink exact to="/lakasok" activeClassName="selected">Lakások/Irodák</NavLink>
+              <a href="/kapcsolat/#miertminket">Miért minket</a>
               {sellBtn}
             </div>
           </div>
@@ -66,7 +66,7 @@ export default class Navigation extends Component {
        
         <div className={`nav-bar mobile ${theme} ${this.state.isOpen ? 'open' : ''}`}>
           <div className="nav-bar-header">
-            <div className="h40-logo"><a href="/"><span>H</span>40</a></div>
+            <div className="h40-logo"><a href="/"><span>H<span className="number-40">40</span></span><span className="residence">Residence</span></a></div>
             <div className="menu-btn" onClick={() => this.setState({ isOpen: !this.state.isOpen })}>
               <span></span>
               <span></span>
@@ -87,8 +87,8 @@ export default class Navigation extends Component {
                 </div>
               </div>
               <NavLink exact to="/referenciak" activeClassName="selected">Referencia</NavLink>
-              <NavLink exact to="/lakasok" activeClassName="selected">Lakások</NavLink>
-              <NavLink exact to="/kapcsolat" activeClassName="selected">Miért minket</NavLink>
+              <NavLink exact to="/lakasok" activeClassName="selected">Lakások/Irodák</NavLink>
+              <a href="/kapcsolat/#miertminket">Miért minket</a>
               {sellBtn}
             </div>
           </div>

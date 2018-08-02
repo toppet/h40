@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="58px" height="68px" viewBox="0 0 58 68" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 20@3x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="inspect_mainpage" transform="translate(-910.000000, -2200.000000)" fill="#1A3966" fill-rule="nonzero">
+            <g id="Group-20" transform="translate(910.000000, 2200.000000)">
+                <path d="M9,4 C6.23857625,4 4,6.23857625 4,9 L4,59 C4,61.7614237 6.23857625,64 9,64 L49,64 C51.7614237,64 54,61.7614237 54,59 L54,9 C54,6.23857625 51.7614237,4 49,4 L9,4 Z M9,0 L49,0 C53.9705627,0 58,4.02943725 58,9 L58,59 C58,63.9705627 53.9705627,68 49,68 L9,68 C4.02943725,68 0,63.9705627 0,59 L0,9 C0,4.02943725 4.02943725,0 9,0 Z" id="Rectangle-9"></path>
+                <path d="M2.25,36.2083333 C1.1454305,36.2083333 0.25,35.3129028 0.25,34.2083333 C0.25,33.1037638 1.1454305,32.2083333 2.25,32.2083333 L14.5,32.2083333 C15.6045695,32.2083333 16.5,33.1037638 16.5,34.2083333 C16.5,35.3129028 15.6045695,36.2083333 14.5,36.2083333 L2.25,36.2083333 Z" id="Line-2"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -104,7 +104,20 @@ export default class Apartments extends Component {
               <span className={`tag ${ap.status}`}>{statusText}</span>
             </div>
             <div className="info-row">
-              
+              <div className="ap-info floor">
+                <span className="title">Emelet</span>
+                <span className="info-text">{ap.floorNumber}</span>
+              </div>
+            </div>
+            <div className="info-row">
+              <div className="ap-info size">
+                <span className="title">Lakás nm</span>
+                <span className="info-text">{ap.size} nm</span>
+              </div>
+              <div className="ap-info balcony">
+                <span className="title">Terasz nm</span>
+                <span className="info-text">{ap.balcony} nm</span>
+              </div>
             </div>
             <span className="moreBtn" onClick={() => this.handleScroll()}>Részletes leírás</span>
           </div>
@@ -137,6 +150,109 @@ export default class Apartments extends Component {
 
           <div ref={(section) => { this.reszletek = section; }}>
             {tabsContainter}
+          </div>
+
+          <div className="price-table">
+            {/* <div className="table-header-row">
+              <span className="table-header">Elnevezés</span>
+              <span className="table-header">Épület</span>
+              <span className="table-header">Emelet</span>
+              <span className="table-header">Szobák száma</span>
+              <span className="table-header">Alapterület</span>
+              <span className="table-header">Terasz</span>
+              <span className="table-header">Állapot</span>
+              <span className="table-header">Ár</span>
+            </div>
+            <div className="table-row">
+            
+            </div> */}
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Elnevezés</th>
+                  <th>Épület</th>
+                  <th>Emelet</th>
+                  <th>Szobák száma</th>
+                  <th>Alapterület</th>
+                  <th>Terasz</th>
+                  <th>Állapot</th>
+                  <th>Ár</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>A101</td>
+                  <td>A</td>
+                  <td>Földszint</td>
+                  <td>2</td>
+                  <td>45 nm</td>
+                  <td>12 nm</td>
+                  <td><span className="free">szabad</span></td>
+                  <td>25.3 millió</td>
+                </tr>
+                <tr>
+                  <td>A101</td>
+                  <td>A</td>
+                  <td>Földszint</td>
+                  <td>2</td>
+                  <td>45 nm</td>
+                  <td>12 nm</td>
+                  <td><span className="free">szabad</span></td>
+                  <td>25.3 millió</td>
+                </tr>
+                <tr>
+                  <td>A102</td>
+                  <td>A</td>
+                  <td>1. emelet</td>
+                  <td>2</td>
+                  <td>45 nm</td>
+                  <td>12 nm</td>
+                  <td><span className="free">szabad</span></td>
+                  <td>25.3 millió</td>
+                </tr>
+                <tr>
+                  <td>A103</td>
+                  <td>A</td>
+                  <td>1. emelet</td>
+                  <td>2</td>
+                  <td>45 nm</td>
+                  <td>12 nm</td>
+                  <td><span className="free">szabad</span></td>
+                  <td>25.3 millió</td>
+                </tr>
+                <tr>
+                  <td>A201</td>
+                  <td>A</td>
+                  <td>2. emelet</td>
+                  <td>2</td>
+                  <td>45 nm</td>
+                  <td>12 nm</td>
+                  <td><span className="free">szabad</span></td>
+                  <td>25.3 millió</td>
+                </tr>
+                <tr>
+                  <td>B100</td>
+                  <td>B</td>
+                  <td>Földszint</td>
+                  <td>2</td>
+                  <td>45 nm</td>
+                  <td>12 nm</td>
+                  <td><span className="free">szabad</span></td>
+                  <td>25.3 millió</td>
+                </tr>
+                <tr>
+                  <td>B101</td>
+                  <td>B</td>
+                  <td>1-2. emelet</td>
+                  <td>2</td>
+                  <td>45 nm</td>
+                  <td>12 nm</td>
+                  <td><span className="free">szabad</span></td>
+                  <td>25.3 millió</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
           <div className="comfy-location">
